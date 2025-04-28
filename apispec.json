@@ -83,6 +83,43 @@
             }
           }
         }
+      },
+      "/categories/{categoryId}": {
+        "get": {
+          "tags": ["Category API"],
+          "summary": "Get Category By Id",
+          "description": "Get Category By Id",
+          "parameters": [
+            {
+              "name": "categoryId",
+              "in": "path",
+              "description": "Category Id"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success Get Category",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "number"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "data": {
+                        "$ref": "#/components/schemas/Category"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "components": {
