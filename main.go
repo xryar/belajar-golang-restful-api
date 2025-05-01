@@ -5,6 +5,7 @@ import (
 	"belajar-golang-retsful-api/controller"
 	"belajar-golang-retsful-api/exception"
 	"belajar-golang-retsful-api/helper"
+	"belajar-golang-retsful-api/middleware"
 	"belajar-golang-retsful-api/repository"
 	"belajar-golang-retsful-api/service"
 	"net/http"
@@ -34,7 +35,7 @@ func main() {
 
 	server := http.Server{
 		Addr:    "localhost:3000",
-		Handler: router,
+		Handler: middleware.NewAuthMiddleware(router),
 	}
 
 	err := server.ListenAndServe()
