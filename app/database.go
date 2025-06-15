@@ -20,4 +20,6 @@ func NewDB() *sql.DB {
 	// migrate create -ext sql -dir db/migrations create_table_first
 	// migrate -database "mysql://root:acumalaka@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations up
 	// migrate -database "mysql://root:acumalaka@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations down
+	// migrate -database "mysql://root:acumalaka@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations version
+	// migrate -database "mysql://root:acumalaka@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations force 20250615082504
 }
