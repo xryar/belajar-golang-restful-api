@@ -1,0 +1,6 @@
+CREATE TABLE category
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(225),
+    PRIMARY KEY(id)
+)ENGINE=InnoDB;
