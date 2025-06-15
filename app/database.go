@@ -7,7 +7,7 @@ import (
 )
 
 func NewDB() *sql.DB {
-	db, err := sql.Open("mysql", "root:acumalaka@tcp(localhost:3306)/belajar_golang_restful_api")
+	db, err := sql.Open("mysql", "root:acumalaka@tcp(localhost:3306)/belajar_golang_database_migration")
 	helper.PanicIfError(err)
 
 	db.SetMaxIdleConns(5)
@@ -16,4 +16,6 @@ func NewDB() *sql.DB {
 	db.SetConnMaxIdleTime(10 * time.Minute)
 
 	return db
+
+	// migrate -database "mysql://root:acumalaka@tcp(localhost:3306)/belajar_golang_database_migration" -path db/migrations up
 }
